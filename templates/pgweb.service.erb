@@ -1,0 +1,17 @@
+##########################################
+# !!! THIS FILE IS MANAGED BY PUPPET !!! #
+#   Manual changes will be overwritten   #
+##########################################
+
+[Unit]
+Description=<%= @descr %>
+
+[Service]
+User=<%= @service_user %>
+ExecStart=<%= @command %>
+Restart=always
+EnvironmentFile=/etc/sysconfig/<%= @service_name %>
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target

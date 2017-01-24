@@ -9,4 +9,15 @@
 # Learn more about module testing here:
 # https://docs.puppet.com/guides/tests_smoke.html
 #
-include ::pgweb
+class { '::pgweb' :
+url => 'test',
+  host           => 'rds',
+  port           => 1234,
+  user           => 'bad',
+  password       => 'password123',
+  database       => 'main',
+  service_ensure => 'stopped',
+  readonly       => false,
+  authuser       => 'postgres',
+  authpass       => 'P0stgR35',
+}
