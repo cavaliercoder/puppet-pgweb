@@ -50,6 +50,11 @@ class pgweb::service {
       default => '',
     }
 
+    $prefixarg = $::pgweb::prefix ? {
+      undef   => '',
+      default => " --prefix=${::pgweb::prefix}",
+    }
+
     $args = [
       $hostarg,
       $portarg,
@@ -57,6 +62,7 @@ class pgweb::service {
       $passarg,
       $dbarg,
       $roarg,
+      $prefixarg,
     ]
 
     $argstr = join($args)
