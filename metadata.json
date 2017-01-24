@@ -1,0 +1,15 @@
+{
+  "name": "cavaliercoder/pgweb",
+  "version": "0.1.0",
+  "author": "Ryan Armstrong <ryan@cavaliercoder.com>",
+  "summary": "Install, configure and maintain pgweb",
+  "license": "Apache-2.0",
+  "source": "https://github.com/cavaliercoder/puppet-pgweb",
+  "project_page": "https://github.com/cavaliercoder/puppet-pgweb",
+  "issues_url": "https://github.com/cavaliercoder/puppet-pgweb/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
