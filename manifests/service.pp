@@ -103,8 +103,8 @@ class pgweb::service {
     }
 
     service { $service_name :
-      ensure => $::pgweb::service_ensure,
-      enable => $::pgweb::service_enable,
+      ensure  => $::pgweb::service_ensure,
+      enable  => $::pgweb::service_enable,
       require => [
         File[$unitfile],
         File[$conffile],

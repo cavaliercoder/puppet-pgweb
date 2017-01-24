@@ -10,7 +10,6 @@
 # https://docs.puppet.com/guides/tests_smoke.html
 #
 class { '::pgweb' :
-url => 'test',
   host           => 'rds',
   port           => 1234,
   user           => 'bad',
