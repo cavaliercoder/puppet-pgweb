@@ -70,6 +70,7 @@ class pgweb::service {
         managehome => false,
         system     => true,
         before     => Service[$service_name],
+        notify     => Service[$service_name],
       }
     }
 
@@ -82,6 +83,7 @@ class pgweb::service {
       selrole => 'object_r',
       seltype => 'systemd_unit_file_t',
       content => template("${module_name}/pgweb.service.erb"),
+      notify  => Service[$service_name],
     }
 
     file { $conffile :
@@ -93,6 +95,7 @@ class pgweb::service {
       selrole => 'object_r',
       seltype => 'etc_t',
       content => template("${module_name}/pgweb.conf.erb"),
+      notify  => Service[$service_name],
     }
 
     exec { 'reload pgweb unit file' :
